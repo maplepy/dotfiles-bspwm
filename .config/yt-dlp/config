@@ -1,0 +1,23 @@
+# Get english subtitles only
+--write-subs
+--sub-langs "en.*"
+
+# Set max streaming quality as 1080p.
+--format "bestvideo[height<=?1080]+bestaudio/best"
+
+# Mark all categories as chapters
+--sponsorblock-mark all
+
+# Remove sponsors and self promos
+#--sponsorblock-remove sponsor,selfpromo,interaction
+--sponsorblock-remove sponsor
+
+# Only download 1080p videos or lower (works with vertical videos) preferring larger framerate for formats with the same resolution
+# -S "res:1080"
+
+# Block weird characters
+--restrict-filenames
+
+# Save all videos under YouTube directory in your home directory
+# -o ~/youtube/%(uploader|Unknown)s-%(title)s.%(ext)s
+-o '~/youtube/%(uploader|Unknown)s - %(playlist_index|)s%(playlist_index& - |)s%(title)s.%(ext)s'
